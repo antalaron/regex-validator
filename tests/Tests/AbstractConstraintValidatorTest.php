@@ -10,22 +10,11 @@
 namespace PHPUnit\Framework;
 
 if (!class_exists('PHPUnit\Framework\Assert')) {
-    abstract class Assert extends \PHPUnit_Framework_Assert
-    {
-    }
+    class_alias('PHPUnit_Framework_Assert', 'PHPUnit\Framework\Assert');
 }
 
-namespace Antalaron\RegexValidator\Tests;
-
-use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
-use Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest as BaseAbstractConstraintValidatorTest;
-
-if (class_exists(ConstraintValidatorTestCase::class)) {
-    abstract class AbstractConstraintValidatorTest extends ConstraintValidatorTestCase
-    {
-    }
+if (class_exists('Symfony\Component\Validator\Test\ConstraintValidatorTestCase')) {
+    class_alias('Symfony\Component\Validator\Test\ConstraintValidatorTestCase', 'Antalaron\RegexValidator\Tests\AbstractConstraintValidatorTest');
 } else {
-    abstract class AbstractConstraintValidatorTest extends BaseAbstractConstraintValidatorTest
-    {
-    }
+    class_alias('Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest', 'Antalaron\RegexValidator\Tests\AbstractConstraintValidatorTest');
 }

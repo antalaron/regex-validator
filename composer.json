@@ -1,0 +1,39 @@
+{
+    "name": "antalaron/regex-validator",
+    "description": "PHP library to validate regular expressions",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antal Áron",
+            "email": "antalaron@antalaron.hu"
+        }
+    ],
+    "require": {
+        "php": "^5.6|^7.0",
+        "symfony/validator": "^2.8|^3.0|^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "conflict": {
+            "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Antalaron\\RegexValidator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Antalaron\\RegexValidator\\Tests\\": "tests/Tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,6 +1,8 @@
 Regular expression validator
 ============================
 
+[![Build Status](https://travis-ci.org/antalaron/regex-validator.svg?branch=master)](https://travis-ci.org/antalaron/regex-validator) [![Coverage Status](https://coveralls.io/repos/github/antalaron/regex-validator/badge.svg)](https://coveralls.io/github/antalaron/regex-validator?branch=master) [![Latest Stable Version](https://poser.pugx.org/antalaron/regex-validator/v/stable)](https://packagist.org/packages/antalaron/regex-validator) [![Latest Unstable Version](https://poser.pugx.org/antalaron/regex-validator/v/unstable)](https://packagist.org/packages/antalaron/regex-validator) [![License](https://poser.pugx.org/antalaron/regex-validator/license)](https://packagist.org/packages/antalaron/regex-validator)
+
 PHP library to validate regular expressions.
 
 Installation

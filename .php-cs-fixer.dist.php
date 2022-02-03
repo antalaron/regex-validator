@@ -7,36 +7,33 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 EOF;
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setUsingCache(false)
     ->setRules([
+        '@DoctrineAnnotation' => true,
         '@Symfony' => true,
         '@Symfony:risky' => true,
         'array_syntax' => ['syntax' => 'short'],
+        'final_internal_class' => ['annotation_include' => []],
         'header_comment' => ['header' => $header],
         'heredoc_to_nowdoc' => true,
         'linebreak_after_opening_tag' => true,
-        'no_extra_consecutive_blank_lines' => ['break', 'continue', 'extra', 'return', 'throw', 'use', 'parenthesis_brace_block', 'square_brace_block', 'curly_brace_block'],
-        'no_multiline_whitespace_before_semicolons' => false,
+        'multiline_whitespace_before_semicolons' => false,
+        'native_function_invocation' => false,
         'no_unreachable_default_argument_value' => true,
         'no_useless_else' => true,
         'no_useless_return' => true,
         'ordered_imports' => true,
-        'phpdoc_order' => true,
-        'psr4' => true,
-        'simplified_null_return' => true,
+        'psr_autoloading' => true,
         'strict_comparison' => true,
         'strict_param' => true,
+        'visibility_required' => ['elements' => ['method', 'property']],
     ])
     ->setFinder(
-        PhpCsFixer\Finder::create()
+        (new PhpCsFixer\Finder())
             ->in(__DIR__)
             ->exclude([
                 'vendor',
-                'bin/.ci',
-                'bin/.travis',
-                'doc',
-                'var',
             ])
     );

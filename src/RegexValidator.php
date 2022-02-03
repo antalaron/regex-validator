@@ -17,7 +17,7 @@ use Symfony\Component\Validator\ConstraintValidator;
  *
  * @author Antal Áron <antalaron@antalaron.hu>
  */
-class RegexValidator extends ConstraintValidator
+final class RegexValidator extends ConstraintValidator
 {
     /**
      * {@inheritdoc}
@@ -34,23 +34,23 @@ class RegexValidator extends ConstraintValidator
 
         $pregError = preg_last_error();
 
-        switch (true) {
-            case \PREG_INTERNAL_ERROR === $pregError:
+        switch ($pregError) {
+            case \PREG_INTERNAL_ERROR:
                 $code = Regex::INTERNAL_ERROR;
                 break;
-            case \PREG_BACKTRACK_LIMIT_ERROR === $pregError:
+            case \PREG_BACKTRACK_LIMIT_ERROR:
                 $code = Regex::BACKTRACK_LIMIT_ERROR;
                 break;
-            case \PREG_RECURSION_LIMIT_ERROR === $pregError:
+            case \PREG_RECURSION_LIMIT_ERROR:
                 $code = Regex::RECURSION_LIMIT_ERROR;
                 break;
-            case \PREG_BAD_UTF8_ERROR === $pregError:
+            case \PREG_BAD_UTF8_ERROR:
                 $code = Regex::BAD_UTF8_ERROR;
                 break;
-            case \PREG_BAD_UTF8_OFFSET_ERROR === $pregError:
+            case \PREG_BAD_UTF8_OFFSET_ERROR:
                 $code = Regex::BAD_UTF8_OFFSET_ERROR;
                 break;
-            case defined('PREG_JIT_STACKLIMIT_ERROR') && \PREG_JIT_STACKLIMIT_ERROR === $pregError:
+            case \PREG_JIT_STACKLIMIT_ERROR:
                 $code = Regex::JIT_STACKLIMIT_ERROR;
                 break;
             default:

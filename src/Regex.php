@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Constraint;
  *
  * @author Antal Áron <antalaron@antalaron.hu>
  */
-class Regex extends Constraint
+final class Regex extends Constraint
 {
     /**
      * If there was an internal PCRE error.
